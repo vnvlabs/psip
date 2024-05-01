@@ -165,6 +165,7 @@ def GET_DEFAULT_PSIP():
 
 
 class PSIP_INFO:
+    
     def __init__(self, defs):
         self.psip = GET_DEFAULT_PSIP() if "psip" not in defs else json.dumps(defs["psip"])
         self.psip_enabled = defs.get("psip_enabled", True)
@@ -193,6 +194,8 @@ class PSIP_INFO:
     def tablist(self):
         return {"psip": ["PSIP", "psip/psip.html"]}
 
+    def script(self):
+        return ""
 
 blueprint = Blueprint(
     'psip',
